@@ -35,7 +35,7 @@ class NavBar extends StatelessWidget {
         children: [
           const TextSpan(text: "<"),
           TextSpan(
-            text: "DevName",
+            text: "Kishan Bhuta",
             style: TextStyle(color: AppColors.primary),
           ),
           const TextSpan(text: " />"),

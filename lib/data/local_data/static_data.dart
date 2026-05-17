@@ -29,25 +29,25 @@ class StaticData {
 
   static final List<ExperienceModel> experience = [
     ExperienceModel(
-      role: "Senior Flutter Developer",
-      company: "TechCorp Inc.",
-      period: "2021 - Present",
+      role: "Senior Software Developer",
+      company: "Idealake Technologies Pvt Ltd",
+      period: "Feb 2025 – Present",
       description:
-          "Leading a team of 5 developers. Architected the main flagship app serving 2M+ users. Reduced build times by 40%.",
+          "• Building enterprise-scale government portals using FlutterFlow.\n• Developed high-traffic Income Tax modules used at population scale.\n• Built fintech systems for Tata Mutual Funds.\n• Collaborated directly with FlutterFlow engineering teams.",
     ),
     ExperienceModel(
-      role: "Mobile Developer",
-      company: "AppStudio Solutions",
-      period: "2019 - 2021",
+      role: "Flutter Team Lead",
+      company: "WDIPL Pvt Ltd",
+      period: "Jun 2023 – Feb 2025",
       description:
-          "Developed 10+ apps from scratch. Migrated legacy native codebases to Flutter, saving 30% on maintenance costs.",
+          "• Led a team of 7 Flutter developers.\n• Deployed 10+ apps on Play Store & App Store.\n• Built fintech platforms with 100K+ downloads.\n• Reduced development time using AI-assisted workflows.\n• Improved company profitability by optimizing delivery speed.\n• Architected scalable Flutter + Laravel systems.",
     ),
     ExperienceModel(
-      role: "Junior Developer",
-      company: "StartUp Hub",
-      period: "2017 - 2019",
+      role: "Flutter Developer",
+      company: "WDIPL Pvt Ltd",
+      period: "Jun 2022 – Jun 2023",
       description:
-          "Collaborated on UI implementation and state management. Learned agile methodologies and CI/CD pipelines.",
+          "• Developed production-grade fintech & health-tech apps.\n• Integrated KYC, Google Maps, Pedometer & Deep Linking.\n• Built real-time trading and portfolio tracking features.\n• Worked on REST APIs and backend integrations.",
     ),
   ];
 }

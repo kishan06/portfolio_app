@@ -383,21 +383,21 @@ class LandingView extends GetView<LandingController> {
 
           // List Items
           _buildExpertiseItem(
-            Icons.speed,
-            "Performance",
-            "Optimization for complex animations and large data sets.",
+            Icons.trending_up,
+            "Fintech & Real-Time Systems",
+            "Developed trading platforms with broker integrations, live market signals, portfolio tracking, KYC flows, and secure payment systems.",
           ),
           const SizedBox(height: 16),
           _buildExpertiseItem(
-            Icons.layers,
-            "Architecture",
-            "Clean code, BLoC, and Riverpod patterns for scalable apps.",
+            Icons.language,
+            "Full-Stack & Integrations",
+            "Worked across Flutter + Laravel backend systems with REST/SOAP APIs, Firebase, WebSockets, Google Maps, and third-party SDK integrations.",
           ),
           const SizedBox(height: 16),
           _buildExpertiseItem(
-            Icons.cloud_done,
-            "Cloud Services",
-            "Firebase, AWS Amplify, and REST/GraphQL integrations.",
+            Icons.groups,
+            "Leadership & Product Delivery",
+            "Led teams of 7+ developers, managed sprint planning, code reviews, production releases, and cross-functional collaboration.",
           ),
 
           const SizedBox(height: 24),
@@ -424,7 +424,7 @@ class LandingView extends GetView<LandingController> {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  "Building cross-platform design systems and CI/CD automation for Flutter.",
+                  "Engineering production-ready Flutter systems focused on performance, scalability, and real-world business impact.",
                   style: AppTextStyles.bodyMedium.copyWith(fontSize: 14),
                 ),
               ],
@@ -439,10 +439,7 @@ class LandingView extends GetView<LandingController> {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.only(top: 4),
-          child: Icon(icon, color: AppColors.primary, size: 20),
-        ),
+        Icon(icon, color: AppColors.primary, size: 20),
         const SizedBox(width: 16),
         Expanded(
           child: Column(
@@ -451,7 +448,7 @@ class LandingView extends GetView<LandingController> {
               Text(
                 title,
                 style: GoogleFonts.firaCode(
-                  fontSize: 14,
+                  fontSize: 16,
                   fontWeight: FontWeight.bold,
                   color: AppColors.primary,
                   letterSpacing: 1,

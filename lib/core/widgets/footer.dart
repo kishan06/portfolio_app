@@ -31,14 +31,14 @@ class Footer extends StatelessWidget {
             onPressed: () async {
               final Uri emailLaunchUri = Uri(
                 scheme: 'mailto',
-                path: 'hello@developer.com',
+                path: 'kishan.bhuta1998@gmail.com',
               );
               if (await canLaunchUrl(emailLaunchUri)) {
                 await launchUrl(emailLaunchUri);
               }
             },
             icon: const Icon(Icons.email_outlined),
-            label: const Text("hello@developer.com"),
+            label: const Text("kishan.bhuta1998@gmail.com"),
             style: ElevatedButton.styleFrom(
               backgroundColor: AppColors.primary,
               foregroundColor: AppColors.backgroundDark,

@@ -21,43 +21,51 @@ class TimelineItem extends StatelessWidget {
   Widget build(BuildContext context) {
     bool isMobile = Responsive.isMobile(context);
 
-    return IntrinsicHeight(
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          // Left Side (Date for Desktop, empty for Mobile if not careful, but let's follow design)
-          // Design: Mobile usually has everything on one side. Desktop zig-zags.
-          if (!isMobile)
-            Expanded(
-              child: isLeftAligned
-                  ? _buildContent(context, alignRight: true)
-                  : _buildDate(alignRight: true),
-            ),
-
-          // Timeline Line and Node
-          SizedBox(
-            width: 40,
-            child: Stack(
-              alignment: Alignment.topCenter,
-              children: [
-                // Line
-                if (!isLast)
-                  Container(
-                    width: 2,
-                    margin: const EdgeInsets.only(top: 20),
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [
-                          AppColors.primary,
-                          AppColors.primary.withOpacity(0.1),
-                        ],
-                      ),
-                    ),
+    return Stack(
+      children: [
+        // Timeline Line
+        if (!isLast)
+          Positioned(
+            top: 20,
+            bottom: 0,
+            left: isMobile ? 19 : 0,
+            right: isMobile ? null : 0,
+            child: Align(
+              alignment: isMobile ? Alignment.topLeft : Alignment.topCenter,
+              child: Container(
+                width: 2,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      AppColors.primary,
+                      AppColors.primary.withOpacity(0.1),
+                    ],
                   ),
-                // Glowing Node
-                Container(
+                ),
+              ),
+            ),
+          ),
+        // Content Row
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Left Side (Date for Desktop, empty for Mobile if not careful, but let's follow design)
+            // Design: Mobile usually has everything on one side. Desktop zig-zags.
+            if (!isMobile)
+              Expanded(
+                child: isLeftAligned
+                    ? _buildContent(context, alignRight: true)
+                    : _buildDate(alignRight: true),
+              ),
+
+            // Timeline Node
+            SizedBox(
+              width: 40,
+              child: Align(
+                alignment: Alignment.topCenter,
+                child: Container(
                       margin: const EdgeInsets.only(
                         top: 8,
                       ), // Align with text top
@@ -100,23 +108,23 @@ class TimelineItem extends StatelessWidget {
                       end: const Offset(1, 1),
                       curve: Curves.easeInOut,
                     ),
-              ],
+              ),
             ),
-          ),
 
-          // Right Side
-          Expanded(
-            child: isMobile
-                ? _buildContent(
-                    context,
-                    alignRight: false,
-                  ) // Mobile always content on right (or left of line)
-                : isLeftAligned
-                ? _buildDate(alignRight: false)
-                : _buildContent(context, alignRight: false),
-          ),
-        ],
-      ),
+            // Right Side
+            Expanded(
+              child: isMobile
+                  ? _buildContent(
+                      context,
+                      alignRight: false,
+                    ) // Mobile always content on right (or left of line)
+                  : isLeftAligned
+                  ? _buildDate(alignRight: false)
+                  : _buildContent(context, alignRight: false),
+            ),
+          ],
+        ),
+      ],
     );
   }
 
