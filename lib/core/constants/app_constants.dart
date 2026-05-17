@@ -1,6 +1,6 @@
 class AppConstants {
-  static const String appName = "Senior Flutter Developer Portfolio";
-  static const String webTitle = "Ben - Senior Flutter Developer";
+  static const String appName = "Kishan Bhuta | Portfolio";
+  static const String webTitle = "Kishan Bhuta | Portfolio";
 }
 
 class AppAssets {

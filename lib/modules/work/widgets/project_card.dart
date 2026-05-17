@@ -4,6 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_app/core/theme/app_theme.dart';
 import 'package:portfolio_app/data/models/project_model.dart';
 
+import 'package:get/get.dart';
+import 'package:portfolio_app/routes/app_routes.dart';
+
 class ProjectCard extends StatefulWidget {
   final ProjectModel project;
 
@@ -21,8 +24,13 @@ class _ProjectCardState extends State<ProjectCard> {
     return MouseRegion(
       onEnter: (_) => setState(() => _isHovered = true),
       onExit: (_) => setState(() => _isHovered = false),
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 300),
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: () {
+          Get.toNamed(Routes.PROJECT_DETAILS, arguments: widget.project);
+        },
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 300),
         curve: Curves.easeOut,
         transform: _isHovered
             ? (Matrix4.identity()..translate(0, -10, 0)) // Lift up
@@ -183,7 +191,9 @@ class _ProjectCardState extends State<ProjectCard> {
             ),
           ],
         ),
+        ),
       ),
     );
   }
 }
+
