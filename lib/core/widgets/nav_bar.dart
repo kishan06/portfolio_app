@@ -6,6 +6,7 @@ import 'package:portfolio_app/routes/app_routes.dart';
 import 'package:portfolio_app/core/utils/responsive.dart';
 import 'package:flutter/services.dart';
 import 'dart:ui';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({super.key});
@@ -62,23 +63,98 @@ class NavBar extends StatelessWidget {
 
   Widget _buildMobileMenuIcon() {
     return IconButton(
-      icon: const Icon(Icons.menu, color: AppColors.textLight),
+      icon: const Icon(Icons.menu_rounded, color: AppColors.textLight, size: 28),
       onPressed: () {
-        // TODO: Implement mobile drawer or bottom sheet
-        Get.defaultDialog(
-          title: "Menu",
-          backgroundColor: AppColors.navy,
-          titleStyle: AppTextStyles.headline,
-          content: Column(
-            children: [
-              _NavBarItem(title: "Home", route: Routes.LANDING),
-              _NavBarItem(title: "Work", route: Routes.WORK),
-              _NavBarItem(title: "Journey", route: Routes.JOURNEY),
-            ],
-          ),
+        Get.dialog(
+          _buildBeautifulMobileMenu(),
+          useSafeArea: false,
+          barrierColor: Colors.black.withOpacity(0.4),
         );
       },
     );
+  }
+
+  Widget _buildBeautifulMobileMenu() {
+    return Material(
+      color: Colors.transparent,
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+        child: Container(
+          width: double.infinity,
+          height: double.infinity,
+          color: AppColors.backgroundDark.withOpacity(0.85),
+          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 60),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Align(
+                alignment: Alignment.topRight,
+                child: IconButton(
+                  icon: const Icon(Icons.close_rounded, color: AppColors.textLight, size: 36),
+                  onPressed: () => Get.back(),
+                ),
+              ),
+              const Spacer(flex: 1),
+              _buildMobileMenuItem("Home", Routes.LANDING, 0),
+              const SizedBox(height: 40),
+              _buildMobileMenuItem("Work", Routes.WORK, 1),
+              const SizedBox(height: 40),
+              _buildMobileMenuItem("Journey", Routes.JOURNEY, 2),
+              const Spacer(flex: 2),
+              Center(child: _ContactButton()),
+              const SizedBox(height: 20),
+            ],
+          ),
+        ),
+      ),
+    ).animate().fadeIn(duration: 400.ms);
+  }
+
+  Widget _buildMobileMenuItem(String title, String route, int index) {
+    final bool isActive = Get.currentRoute == route;
+    return InkWell(
+      onTap: () {
+        Get.back(); // Close the menu
+        if (!isActive) Get.offNamed(route);
+      },
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          AnimatedContainer(
+            duration: const Duration(milliseconds: 300),
+            width: isActive ? 40 : 0,
+            height: 4,
+            margin: EdgeInsets.only(right: isActive ? 20 : 0),
+            decoration: BoxDecoration(
+              color: AppColors.primary,
+              borderRadius: BorderRadius.circular(2),
+              boxShadow: isActive
+                  ? [
+                      BoxShadow(
+                        color: AppColors.primary.withOpacity(0.5),
+                        blurRadius: 10,
+                        spreadRadius: 2,
+                      )
+                    ]
+                  : [],
+            ),
+          ),
+          Text(
+            title,
+            style: GoogleFonts.inter(
+              fontSize: 48,
+              fontWeight: isActive ? FontWeight.w800 : FontWeight.w500,
+              color: isActive ? AppColors.textLight : AppColors.textDim,
+              letterSpacing: -2,
+            ),
+          ),
+        ],
+      ),
+    ).animate()
+      .slideX(begin: -0.2, end: 0, duration: 600.ms, delay: (100 * index).ms, curve: Curves.easeOutCubic)
+      .fadeIn(duration: 600.ms, delay: (100 * index).ms);
   }
 }
 
