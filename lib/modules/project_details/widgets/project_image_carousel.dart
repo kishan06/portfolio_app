@@ -150,42 +150,44 @@ class _ProjectImageCarouselState extends State<ProjectImageCarousel> {
                                       blurRadius: 10,
                                     ),
                                   ],
-                            image: DecorationImage(
-                              image: NetworkImage(
-                                widget.imageUrls[actualIndex],
-                              ),
-                              fit: BoxFit.cover, // Ensures it fills the mobile aspect ratio correctly without stretching
-                              alignment: Alignment.topCenter,
-                            ),
                           ),
-                          child: Stack(
-                            children: [
-                              // Mobile device notch illusion
-                              Align(
-                                alignment: Alignment.topCenter,
-                                child: Container(
-                                  width: 100,
-                                  height: 20,
-                                  decoration: const BoxDecoration(
-                                    color: AppColors.navy,
-                                    borderRadius: BorderRadius.only(
-                                      bottomLeft: Radius.circular(16),
-                                      bottomRight: Radius.circular(16),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(28), // Slightly less than container to fit inside border
+                            child: Stack(
+                              fit: StackFit.expand,
+                              children: [
+                                // Custom image widget that handles retries
+                                _ImageWithRetry(
+                                  imageUrl: widget.imageUrls[actualIndex],
+                                  fit: BoxFit.cover,
+                                  alignment: Alignment.topCenter,
+                                ),
+                                // Mobile device notch illusion
+                                Align(
+                                  alignment: Alignment.topCenter,
+                                  child: Container(
+                                    width: 100,
+                                    height: 20,
+                                    decoration: const BoxDecoration(
+                                      color: AppColors.navy,
+                                      borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(16),
+                                        bottomRight: Radius.circular(16),
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                              // Glassmorphism overlay when not active
-                              if (!isActive)
-                                Container(
-                                  decoration: BoxDecoration(
-                                    color: AppColors.backgroundDark.withOpacity(
-                                      0.5,
+                                // Glassmorphism overlay when not active
+                                if (!isActive)
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      color: AppColors.backgroundDark.withOpacity(
+                                        0.5,
+                                      ),
                                     ),
-                                    borderRadius: BorderRadius.circular(30),
                                   ),
-                                ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -275,6 +277,87 @@ class _ProjectImageCarouselState extends State<ProjectImageCarousel> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class _ImageWithRetry extends StatefulWidget {
+  final String imageUrl;
+  final BoxFit fit;
+  final Alignment alignment;
+
+  const _ImageWithRetry({
+    Key? key,
+    required this.imageUrl,
+    this.fit = BoxFit.cover,
+    this.alignment = Alignment.center,
+  }) : super(key: key);
+
+  @override
+  _ImageWithRetryState createState() => _ImageWithRetryState();
+}
+
+class _ImageWithRetryState extends State<_ImageWithRetry> {
+  int _retryCount = 0;
+  final int _maxRetries = 4;
+
+  @override
+  Widget build(BuildContext context) {
+    if (widget.imageUrl.startsWith('assets/')) {
+      return Image.asset(
+        widget.imageUrl,
+        fit: widget.fit,
+        alignment: widget.alignment,
+      );
+    }
+
+    // Add the retry count to the key so that changing the count forces a re-render of the network image
+    return Image.network(
+      widget.imageUrl,
+      key: ValueKey('${widget.imageUrl}_$_retryCount'),
+      fit: widget.fit,
+      alignment: widget.alignment,
+      errorBuilder: (context, error, stackTrace) {
+        if (_retryCount < _maxRetries) {
+          // Schedule a retry after 3 seconds
+          Future.delayed(const Duration(seconds: 3), () {
+            if (mounted) {
+              setState(() {
+                _retryCount++;
+              });
+            }
+          });
+          return Container(
+            color: AppColors.backgroundDark,
+            child: const Center(
+              child: SizedBox(
+                width: 24,
+                height: 24,
+                child: CircularProgressIndicator(strokeWidth: 2),
+              ),
+            ),
+          );
+        }
+        return Container(
+          color: AppColors.backgroundDark,
+          child: const Center(
+            child: Icon(Icons.broken_image, color: Colors.grey, size: 30),
+          ),
+        );
+      },
+      loadingBuilder: (context, child, loadingProgress) {
+        if (loadingProgress == null) return child;
+        return Container(
+          color: AppColors.backgroundDark,
+          child: const Center(
+            child: SizedBox(
+              width: 24,
+              height: 24,
+              child: CircularProgressIndicator(strokeWidth: 2),
+            ),
+          ),
+        );
+      },
     );
   }
 }

@@ -67,31 +67,45 @@ class _ProjectCardState extends State<ProjectCard> {
               child: Stack(
                 fit: StackFit.expand,
                 children: [
-                  Image.network(
-                    widget.project.imageUrl,
-                    fit: BoxFit.cover,
-                    loadingBuilder: (context, child, loadingProgress) {
-                      if (loadingProgress == null) return child;
-                      return Center(
-                        child: CircularProgressIndicator(
-                          value: loadingProgress.expectedTotalBytes != null
-                              ? loadingProgress.cumulativeBytesLoaded /
-                                    loadingProgress.expectedTotalBytes!
-                              : null,
-                          color: AppColors.primary,
+                  widget.project.imageUrl.startsWith('assets/')
+                      ? Image.asset(
+                          widget.project.imageUrl,
+                          fit: BoxFit.cover,
+                          errorBuilder: (context, error, stackTrace) => Container(
+                            color: AppColors.navy,
+                            child: const Center(
+                              child: Icon(
+                                Icons.broken_image,
+                                color: AppColors.textDim,
+                              ),
+                            ),
+                          ),
+                        )
+                      : Image.network(
+                          widget.project.imageUrl,
+                          fit: BoxFit.cover,
+                          loadingBuilder: (context, child, loadingProgress) {
+                            if (loadingProgress == null) return child;
+                            return Center(
+                              child: CircularProgressIndicator(
+                                value: loadingProgress.expectedTotalBytes != null
+                                    ? loadingProgress.cumulativeBytesLoaded /
+                                        loadingProgress.expectedTotalBytes!
+                                    : null,
+                                color: AppColors.primary,
+                              ),
+                            );
+                          },
+                          errorBuilder: (context, error, stackTrace) => Container(
+                            color: AppColors.navy,
+                            child: const Center(
+                              child: Icon(
+                                Icons.broken_image,
+                                color: AppColors.textDim,
+                              ),
+                            ),
+                          ),
                         ),
-                      );
-                    },
-                    errorBuilder: (context, error, stackTrace) => Container(
-                      color: AppColors.navy,
-                      child: const Center(
-                        child: Icon(
-                          Icons.broken_image,
-                          color: AppColors.textDim,
-                        ),
-                      ),
-                    ),
-                  ),
                   // Gradient Overlay
                   Container(
                     decoration: BoxDecoration(

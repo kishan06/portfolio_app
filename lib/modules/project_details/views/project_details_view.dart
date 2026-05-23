@@ -152,7 +152,9 @@ class ProjectDetailsView extends GetView<ProjectDetailsController> {
                       ),
                     ],
                     image: DecorationImage(
-                      image: NetworkImage(controller.project.imageUrl),
+                      image: controller.project.imageUrl.startsWith('http')
+                          ? NetworkImage(controller.project.imageUrl) as ImageProvider
+                          : AssetImage(controller.project.imageUrl),
                       fit: BoxFit.cover,
                     ),
                   ),

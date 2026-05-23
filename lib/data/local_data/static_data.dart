@@ -41,8 +41,7 @@ class StaticData {
       title: "Tata Mutual Fund",
       description:
           "Worked on the Tata Mutual Fund mobile application focused on simplifying investing, portfolio tracking, and financial planning for millions of users.\n\nContributed to enterprise-scale fintech modules enabling goal-based investing, intelligent portfolio tracking, and seamless mutual fund management experiences.\n\nBuilt and optimized high-performance Flutter modules for responsive financial dashboards, onboarding workflows, and investment planning systems.",
-      imageUrl:
-          "https://play-lh.googleusercontent.com/HfT51YbU-zyQoPzqB_rsaQ2815cp2YS5iW8pZZlNLvWJ7_5WFBDgx__vDzqzeVg5EZU=w5120-h2880-rw",
+      imageUrl: "assets/images/tata_mutual_fund/tata_mutual_fund1.png",
       techStack: [
         "Flutter",
         "Dart",
@@ -77,18 +76,17 @@ class StaticData {
       appStoreUrl:
           "https://apps.apple.com/in/app/tata-mutual-fund-sip-track/id6744349856",
       gallery: [
-        "https://play-lh.googleusercontent.com/HfT51YbU-zyQoPzqB_rsaQ2815cp2YS5iW8pZZlNLvWJ7_5WFBDgx__vDzqzeVg5EZU=w5120-h2880-rw",
-        "https://play-lh.googleusercontent.com/rE3NOwu_bGtvrlbUu-GdyfeWfL5klM-_OrK_GJLLmHGKZNG0QATmwanBEowilb2SDTo=w5120-h2880-rw",
-        "https://play-lh.googleusercontent.com/KoTORnIy3557lXpUTPxvcCUP3Twlhns-lzYffRMHPGAYuH7KNp9awwPd9Yt775u4gFk=w5120-h2880-rw",
-        "https://play-lh.googleusercontent.com/-IXvVNzMcrUmPOtjOeIsR1r57dn4_tq0CznEnKHmOoSR2R0BMKWiqvJfC-MFCpCyOdU=w5120-h2880-rw",
+        "assets/images/tata_mutual_fund/tata_mutual_fund1.png",
+        "assets/images/tata_mutual_fund/tata_mutual_fund2.png",
+        "assets/images/tata_mutual_fund/tata_mutual_fund3.png",
+        "assets/images/tata_mutual_fund/tata_mutual_fund4.png",
       ],
     ),
     ProjectModel(
       title: "Get Set Fit",
       description:
           "Worked on Get Set Fit, a comprehensive fitness and wellness platform designed to help users track health metrics, maintain workout consistency, and achieve long-term fitness goals.\n\nBuilt and optimized high-performance Flutter modules focused on fitness tracking, wellness analytics, real-time health monitoring, and engaging user experiences.\n\nContributed to scalable health-tech architecture integrating wearable devices, analytics systems, personalized fitness journeys, and intelligent wellness features.",
-      imageUrl:
-          "https://play-lh.googleusercontent.com/SFfdZyv-gtveIQykMRzcpR_Z0uoTQBVcwqOfp3WQcelpK4zJR8DdZ8cwwXG0MOLwTLHH9zvjlJIDEtSLEYN8YQ=w1052-h592-rw",
+      imageUrl: "assets/images/gsf/gsf1.png",
       techStack: [
         "Flutter",
         "Dart",
@@ -136,20 +134,19 @@ class StaticData {
           "https://play.google.com/store/apps/details?id=com.getsetfit.gsf&hl=en",
       appStoreUrl: "https://apps.apple.com/in/app/getsetfit/id6455990055",
       gallery: [
-        "https://play-lh.googleusercontent.com/SFfdZyv-gtveIQykMRzcpR_Z0uoTQBVcwqOfp3WQcelpK4zJR8DdZ8cwwXG0MOLwTLHH9zvjlJIDEtSLEYN8YQ=w1052-h592-rw",
-        "https://play-lh.googleusercontent.com/fDuyqDoSPA_WwANWYnHDoHqkWO4CU6TBZyE-Hmbzzy831NoKAXerYnSpQSP2nnRuBoZp2pPSgTLq2ixfcx8nmQ=w1052-h592-rw",
-        "https://play-lh.googleusercontent.com/3kzk9XTpR0kuVb349nsT-LabpzlzxPyY2AUfqNlg7nfx3zJ9_fxzC0zpatMqe1lLebhYXkHy2FiGpDbuX_Xccw=w1052-h592-rw",
-        "https://play-lh.googleusercontent.com/oLHRO_iP82YM9-AGaEnvw_IrbvgJm-NIUZeIQ9jO7vM972kyVAJcPoF0QHzjrxVqUx0VzA5m2Mk1ju2gOL0icA=w1052-h592-rw",
-        "https://play-lh.googleusercontent.com/KsZ_AUy9_rKKBQXI6XTyG_fcPpFl8IU9K-DNS_P5-wzcjCckUWYMjJoxJykG-8MNUzxCxtHOhYX_SLr5c2Lp8g=w1052-h592-rw",
-        "https://play-lh.googleusercontent.com/fDuyqDoSPA_WwANWYnHDoHqkWO4CU6TBZyE-Hmbzzy831NoKAXerYnSpQSP2nnRuBoZp2pPSgTLq2ixfcx8nmQ=w1052-h592-rw",
+        "assets/images/gsf/gsf1.png",
+        "assets/images/gsf/gsf2.png",
+        "assets/images/gsf/gsf3.png",
+        "assets/images/gsf/gsf4.png",
+        "assets/images/gsf/gsf5.png",
+        "assets/images/gsf/gsf6.png",
       ],
     ),
     ProjectModel(
       title: "Traders Circuit",
       description:
           "Worked on Traders Circuit, an advanced stock market and trading platform designed to simplify investing and trading for retail investors and active traders.\n\nBuilt scalable fintech modules focused on real-time market insights, trading recommendations, portfolio intelligence, and seamless broker-integrated user experiences.\n\nDeveloped high-performance Flutter architecture for financial dashboards, live trading workflows, and intelligent market analysis systems used by thousands of users.",
-      imageUrl:
-          "https://play-lh.googleusercontent.com/zTTAqGwiLGh6uNH-Vpi-9pyaaVGkk6MOsvT4byox8okocPFe4gsgVkMa9C-D7t37Dw=w1052-h592-rw",
+      imageUrl: "assets/images/tc/tc1.png",
       techStack: ["Flutter", "Broker Integrations", "Real-Time Systems"],
       company: "WDIPL Pvt Ltd",
       role: "Flutter Team Lead",
@@ -187,17 +184,16 @@ class StaticData {
           "https://play.google.com/store/apps/details?id=com.traders_circuit.app&hl=en_IN",
       appStoreUrl: "https://apps.apple.com/in/app/traders-circuit/id6670790027",
       gallery: [
-        "https://play-lh.googleusercontent.com/zTTAqGwiLGh6uNH-Vpi-9pyaaVGkk6MOsvT4byox8okocPFe4gsgVkMa9C-D7t37Dw=w1052-h592-rw",
-        "https://play-lh.googleusercontent.com/spQ9aMSTHR3b2DcyIF8UU_VG8HIN_0j171O0h--eecY_DZqiXhmz56pzQbObJfTAsA=w1052-h592-rw",
-        "https://play-lh.googleusercontent.com/lnKMthiqWOCOu0eCZ-7IDwBZrNl0ryTuD9u0KEka3tQOKIFOiVfhAZZ3y-5Y6ZDPEvpY=w1052-h592-rw",
+        "assets/images/tc/tc1.png",
+        "assets/images/tc/tc2.png",
+        "assets/images/tc/tc3.png",
       ],
     ),
     ProjectModel(
       title: "Good Times",
       description:
           "Worked on Good Times, a modern event discovery and social engagement platform designed to connect event organizers and attendees through real-time interactions and immersive event experiences.\n\nBuilt scalable Flutter modules focused on event discovery, real-time community engagement, social networking, live communication, and interactive location-based experiences.\n\nDeveloped high-performance features for organizers and attendees while delivering smooth UI experiences and scalable backend integrations.",
-      imageUrl:
-          "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/08/5f/b8/085fb836-f068-f557-936e-178ba7182b26/89ba7aff-c31d-4ba2-bc26-499a36d5778c_intro-11-pro.jpeg/300x650bb.webp",
+      imageUrl: "assets/images/gt/gt1.webp",
       techStack: [
         "Flutter",
         "WebSockets",
@@ -240,11 +236,67 @@ class StaticData {
           "https://play.google.com/store/apps/details?id=com.goodtimes&hl=en_IN",
       appStoreUrl: "https://apps.apple.com/in/app/good-times-app/id6479345939",
       gallery: [
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/08/5f/b8/085fb836-f068-f557-936e-178ba7182b26/89ba7aff-c31d-4ba2-bc26-499a36d5778c_intro-11-pro.jpeg/300x650bb.webp",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/33/68/d8/3368d830-b0a1-cdea-ea0d-6285ab5227df/c2971799-40ae-436d-b261-b2adf82c80a7_preference-11-pro.jpg/300x650bb.webp",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/45/a9/e5/45a9e5f4-57a5-75f5-27a5-b59941863737/2b4654a7-f44a-4e93-926b-db6787ec3b39_home-11-pro.jpg/300x650bb.webp",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/37/83/15/378315bd-4285-e265-a493-4bf87ae04c60/0e9ec82f-9bee-45ba-9ef4-83d2b7bd2e03_event-inner-11-pro.jpg/300x650bb.webp",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6c/31/2f/6c312f54-c1b0-cb56-936a-f407e2cc4af8/cbb64a53-1770-46dd-b8a8-07a9e7cabf1f_refer-earn.jpg/300x650bb.webp",
+        "assets/images/gt/gt1.webp",
+        "assets/images/gt/gt2.webp",
+        "assets/images/gt/gt3.webp",
+        "assets/images/gt/gt4.webp",
+        "assets/images/gt/gt5.webp",
+      ],
+    ),
+    ProjectModel(
+      title: "Digest",
+      description:
+          "Worked on Digest, a personalized nutrition and wellness application designed to help users identify food sensitivities and improve their overall health through intelligent dietary tracking.\n\nBuilt scalable Flutter modules focused on meal tracking, symptom analysis, personalized nutrition insights, and intuitive wellness experiences.\n\nDeveloped smooth and user-friendly health-tech workflows enabling users to track meals, monitor symptoms, and receive ingredient-level nutrition recommendations powered by intelligent reporting systems.",
+      imageUrl: "assets/images/digest/digest1.png",
+      techStack: [
+        "Flutter",
+        "Dart",
+        "REST APIs",
+        "Health-Tech Systems",
+        "Analytics",
+        "Firebase",
+        "State Management",
+        "Cross-Platform Architecture",
+      ],
+      company: "WDIPL Pvt Ltd",
+      role: "Flutter Developer",
+      projectType: "Health-Tech / Nutrition & Wellness Platform",
+      contributions: [
+        "Built personalized meal and nutrition tracking workflows.",
+        "Developed symptom and bowel movement logging systems.",
+        "Worked on intelligent food analysis and reporting experiences.",
+        "Optimized UI flows for fast and seamless health data entry.",
+        "Built scalable wellness dashboards and tracking modules.",
+        "Improved app responsiveness and animation performance.",
+        "Worked on large food ingredient database integrations.",
+        "Delivered smooth user experiences with optimized Flutter architecture.",
+        "Contributed to highly intuitive health-focused onboarding flows.",
+        "Built responsive and scalable cross-platform mobile experiences.",
+      ],
+      coreFeatures: [
+        "Personalized nutrition recommendations.",
+        "Meal and ingredient tracking.",
+        "Symptom analysis and wellness monitoring.",
+        "Intelligent food sensitivity insights.",
+        "Ingredient-level dietary reporting.",
+        "Health progress and wellness tracking.",
+        "Smart nutrition-based recommendations.",
+        "Comprehensive food database support.",
+      ],
+      impactMetrics: [
+        "Intelligent personalized nutrition platform.",
+        "High-performance health tracking workflows.",
+        "Optimized user-friendly wellness experiences.",
+        "Scalable cross-platform Flutter architecture.",
+        "Enhanced user engagement through smart nutrition insights.",
+      ],
+      playStoreUrl: "https://play.google.com/store/apps/details?id=com.digest.app&hl=en_IN",
+      appStoreUrl: "https://apps.apple.com/us/app/digest-meal-tracker/id6479253176",
+      gallery: [
+        "assets/images/digest/digest1.png",
+        "assets/images/digest/digest2.png",
+        "assets/images/digest/digest3.png",
+        "assets/images/digest/digest4.png",
       ],
     ),
   ];
