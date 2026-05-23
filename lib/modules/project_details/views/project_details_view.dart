@@ -199,17 +199,17 @@ class ProjectDetailsView extends GetView<ProjectDetailsController> {
       children: [
         ProjectLinkButton(
           url: controller.project.websiteUrl,
-          icon: Icons.language,
+          icon: const Icon(Icons.language),
           label: "Live Demo",
         ),
         ProjectLinkButton(
           url: controller.project.playStoreUrl,
-          icon: FontAwesomeIcons.googlePlay,
+          icon: const FaIcon(FontAwesomeIcons.googlePlay),
           label: "Play Store",
         ),
         ProjectLinkButton(
           url: controller.project.appStoreUrl,
-          icon: FontAwesomeIcons.apple,
+          icon: const FaIcon(FontAwesomeIcons.apple),
           label: "App Store",
         ),
       ],

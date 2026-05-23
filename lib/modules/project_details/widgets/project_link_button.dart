@@ -5,7 +5,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 
 class ProjectLinkButton extends StatefulWidget {
   final String? url;
-  final IconData icon;
+  final Widget icon;
   final String label;
 
   const ProjectLinkButton({
@@ -66,10 +66,12 @@ class _ProjectLinkButtonState extends State<ProjectLinkButton> {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(
-                widget.icon,
-                color: _isHovered ? Colors.white : AppColors.primary,
-                size: 20,
+              IconTheme(
+                data: IconThemeData(
+                  color: _isHovered ? Colors.white : AppColors.primary,
+                  size: 20,
+                ),
+                child: widget.icon,
               ),
               const SizedBox(width: 8),
               Text(
